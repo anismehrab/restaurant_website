@@ -109,6 +109,41 @@ align-items: flex-end;}*/
 /*END HEADER*/
 
 
+
+/* FOOTER */
+.panel-footer{
+    margin-top: 30px;
+    padding-top: 35px;
+    background-color: #222;
+    border-top: 0;
+}
+
+.panel-footer div .row {
+    margin-bottom: 35px;
+}
+
+#hours , #address {
+    line-height:2;
+}
+#hours > span , #address > span {
+    font-size: 1.3em
+}
+
+#address p {
+    color: #557c3e;
+    font-size: .8em;
+    line-height: 1.8;
+}
+#testmonials{
+    font-style: italic;
+}
+
+#testmonials p:nthchild(2){
+    margin-top: 25px;
+}
+/* END FOOTER */
+
+
 /* HOME PAGE */
 .jumbotron {
     box-shadow:  0 0 50px #3F0C1F;
@@ -158,41 +193,55 @@ align-items: flex-end;}*/
 
 /* END HOME PAGE */
 
+/* CATEGORY PAGE*/
 
-/* FOOTER */
-.panel-footer{
-    margin-top: 30px;
-    padding-top: 35px;
-    background-color: #222;
-    border-top: 0;
-}
-
-.panel-footer div .row {
-    margin-bottom: 35px;
+.category-tile {
+    position:relative;
+    border: 2px solid #3F0C1F;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    margin:0 auto 15px;
 }
 
-#hours , #address {
-    line-height:2;
+.category-tile span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
+    opacity: .8;
+
 }
-#hours > span , #address > span {
-    font-size: 1.3em
+.category-tile:hover {
+    box-shadow: 0 1x 5px 1px #cccccc;
 }
 
-#address p {
-    color: #557c3e;
-    font-size: .8em;
-    line-height: 1.8;
-}
-#testmonials{
-    font-style: italic;
+/* next sibling*/
+#menu-categories-title + div {
+    margin-bottom: 50px;
 }
 
-#testmonials p:nthchild(2){
-    margin-top: 25px;
-}
-/* END FOOTER */
+/* END CATEGORY PAGE */
 
-/********** large devices **************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********** EXTEA LARGE devices **************/
 @media (min-width: 1200px) {
     /*header page*/
     #navbarNav {
@@ -213,7 +262,7 @@ align-items: flex-end;}*/
  }
 }
 
-/********** Medium devices only **********/
+/********** LARGE devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
   /* Header */
   #logo-img {
