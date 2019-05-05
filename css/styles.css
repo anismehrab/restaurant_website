@@ -56,10 +56,9 @@ vertical-align: middle;
 align-content: right;
 align-items: flex-end;}*/
 
-.navbar-header button.navbar-toggler{
+#header-nav button.navbar-toggler{
     border : 1.5px solid #61122f;
-    align-items: flex-end;
-    text-align: right;
+
 }
 
 
@@ -68,7 +67,7 @@ align-items: flex-end;}*/
    /* padding-top: 0px;
     margin-bottom: 35px;*/
     padding-bottom: 10px;
-    flex-grow: 0;
+
 
 }
 
@@ -302,22 +301,27 @@ h3.menu-item-title {
 /********** EXTEA LARGE devices **************/
 @media (min-width: 1200px) {
     /*header page*/
+    .navbar-brand {
+        margin-top: -30px;
+        padding-bottom: 15px;
+
+    }
     #navbarNav {
         font-size: 1.1em;
     padding-top: 0px;
     margin-top: -30px;
     /*margin-bottom: 35px;*/
     padding-bottom: 20px;
-    flex-grow: 0;
+    flex-basis: 100%;
+    /*flex-grow: 0;*/
     }
     /* end Header*/
 
-
- .jumbotron {
+    .jumbotron {
     background:url('../images/jumbotron_1200.jpg') no-repeat;
     height: 675px;
 
- }
+    }
 }
 
 /********** LARGE devices only **********/
@@ -348,19 +352,36 @@ h3.menu-item-title {
 @media (min-width: 768px) and (max-width: 991px) {
     /* Header*/
     #navbarNav {
-    font-size: .95em;
-    flex-grow: 0;
-    margin-top: -3px;
+        font-size: .95em;
+        margin-top: -3px;
+        flex-basis: 100%;
+
     }
+   /* #phone a span {/*phone number*/
+   /*     margin-right: 0px;
+        padding-right:0px;
+        margin-left: 0px;
+        padding-left: 0px;
+        font-size: 0.85em;
+        margin-top: 5px;
+        font-weight:bold;
+    }
+
+    #phone div {/* we deliver */
+   /*     padding-right: 10px;
+        margin-top: 2px;
+        font-size: .8em;
+        padding-bottom: 0px;
+
+    }*/
     /* end Header*/
 
    /* Home page */
   .jumbotron {
-    background:url('../images/jumbotron_768.jpg') no-repeat;
-    height: 432px;
-
+        background:url('../images/jumbotron_768.jpg') no-repeat;
+        height: 432px;
+    }
     /* end Home page*/
-}
 }
 
 
