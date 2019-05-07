@@ -184,48 +184,72 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
     // using the menu item data and html
     // building a MenuItemViewHtml to be inserted into page
-    function buildMenuItemsViewHtml(categorymenuitems,menuitemtitlehtml,menuitemhtml){
-        var name = categorymenuitems.category.name;
-        var special_instructions = categorymenuitems.category.special_instructions;
-        var final_html = insertProperty(menuitemtitlehtml,"name",name);
-        final_html = insertProperty(menuitemtitlehtml,"special_instructions",special_instructions);
-        final_html += "<section class='row'>";
 
-        var menuitems = categorymenuitems.menu_items;
-        var catShortName = categorymenuitems.category.short_name;
-        for (var i = 0; i < menuitems.length; i++) {
-            html = menuitemhtml;
-            // insrt menu item values
+function buildMenuItemsViewHtml(categoryMenuItems,
+                                menuItemsTitleHtml,
+                                menuItemHtml) {
 
-            var short_name=menuitems[i].short_name;
-            var price_small = menuitems[i].price_small;
-            var small_portion_name = menuitems[i].small_portion_name;
-            var price_large = menuitems[i].price_large;
-            var large_portion_name = menuitems[i].large_portion_name;
-            var description = menuitems[i].description;
-            var name = menuitems[i].name;
+  menuItemsTitleHtml =
+    insertProperty(menuItemsTitleHtml,
+                   "name",
+                   categoryMenuItems.category.name);
+  menuItemsTitleHtml =
+    insertProperty(menuItemsTitleHtml,
+                   "special_instructions",
+                   categoryMenuItems.category.special_instructions);
 
-            html = insertProperty(html,"catShortName",catShortName);
-            html = insertProperty(html,"short-name",short_name);
-            html = insertItemPrice(html,"price_small",price_small);
-            html = insertItemPortionName(html,"small_portion_name",small_portion_name);
-            html = insertItemPrice(html,"price_large",price_large);
-            html = insertItemPortionName(html,"large_portion_name",large_portion_name);
-            html = insertProperty(html,"description",description);
-            html = insertProperty(html,"name",name);
+  var finalHtml = menuItemsTitleHtml;
+  finalHtml += "<section class='row'>";
 
+  // Loop over menu items
+  var menuItems = categoryMenuItems.menu_items;
+  var catShortName = categoryMenuItems.category.short_name;
+  for (var i = 0; i < menuItems.length; i++) {
+    // Insert menu item values
+    var html = menuItemHtml;
+    html =
+      insertProperty(html, "short_name", menuItems[i].short_name);
+    html =
+      insertProperty(html,
+                     "catShortName",
+                     catShortName);
+    html =
+      insertItemPrice(html,
+                      "price_small",
+                      menuItems[i].price_small);
+    html =
+      insertItemPortionName(html,
+                            "small_portion_name",
+                            menuItems[i].small_portion_name);
+    html =
+      insertItemPrice(html,
+                      "price_large",
+                      menuItems[i].price_large);
+    html =
+      insertItemPortionName(html,
+                            "large_portion_name",
+                            menuItems[i].large_portion_name);
+    html =
+      insertProperty(html,
+                     "name",
+                     menuItems[i].name);
+    html =
+      insertProperty(html,
+                     "description",
+                     menuItems[i].description);
 
-            // Add clearfix after every second menu item
-            if (i % 2 != 0) {
-             html +=
-                 "<div class='clearfix d-sm-none d-md-block'></div>";
-            }
+    // Add clearfix after every second menu item
+    if (i % 2 != 0) {
+      html +=
+        "<div class='clearfix d-sm-none d-md-block'></div>";
+    }
 
-            final_html += html;
-        }
-        final_html += "</section>";
-        return final_html;
-    };
+    finalHtml += html;
+  }
+
+  finalHtml += "</section>";
+  return finalHtml;
+}
 
 
     // Appends price with '$' if price exists
