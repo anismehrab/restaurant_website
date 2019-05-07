@@ -205,8 +205,8 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
             var description = menuitems[i].description;
             var name = menuitems[i].name;
 
-            html = insertProperty(html,"catShortName",short-name);
-            html = insertProperty(html,"short-name",catShortName);
+            html = insertProperty(html,"catShortName",catShortName);
+            html = insertProperty(html,"short-name",short_name);
             html = insertItemPrice(html,"price_small",price_small);
             html = insertItemPortionName(html,"small_portion_name",small_portion_name);
             html = insertItemPrice(html,"price_large",price_large);
